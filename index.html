@@ -1,58 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Selamat Datang Di 17 Mu Sayang — Untuk Rizki Pacar Aku</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selamat Datang di 17 Mu Sayangku Rizki!</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="app">
-    <header>
-      <h1>Selamat Datang Di 17 Mu Sayang</h1>
-    </header>
+  <div class="container">
+    <h1 id="title">🎂 Selamat Ulang Tahun, Sayangku 💖</h1>
 
-      <div class="right">
-        <textarea id="customMessage" aria-label="Ucapan">
-Selamat ulang tahun yang ke-17, sayangg❤️‍🔥
+    <!-- 📸 Tempat menampilkan gambar -->
+    <div id="photo-container" class="photo hidden">
+      <img id="photo" src="https://i.ibb.co/5rv6s0P/love-cake.jpg" alt="Foto Ulang Tahun" />
+    </div>
 
-Tujuh belas tahun bukan sekadar angka, tapi awal dari perjalanan menuju kedewasaan. Aku bersyukur bisa menemani kamu tumbuh, melihat caramu berjuang, tertawa, dan belajar menghadapi dunia.
+    <div id="message" class="message hidden"></div>
 
-Kamu bukan hanya seseorang yang aku sayangi, tapi juga tempat aku merasa tenang, tempat aku belajar apa itu ketulusan.
-Terima kasih sudah selalu jadi sosok yang sabar, hangat, dan penuh perhatian.
+    <button id="startBtn">Klik untuk Buka Ucapan 🎁</button>
 
-Semoga di umur baru ini, semua impianmu semakin dekat. Langkahmu makin mantap, rezekimu lancar, dan hatimu selalu dikelilingi kebahagiaan. Jangan pernah lupa, di setiap doaku selalu ada namamu di dalamnya
-
-Aku bangga padamu, dan aku akan terus ada di sini . Menemanimu di setiap langkah, di setiap cerita, dan di setiap detak waktu yang kita jalani bersama 🤎
-        </textarea>
-
-        <div class="buttons">
-          <button id="startBtn">Tampilkan Ucapan 🎁</button>
-          <button id="resetBtn" class="muted">Reset</button>
-        </div>
-      </div>
-    </section>
-
-    <section id="preview" class="preview hidden" aria-live="polite">
-      <div id="photoBox" class="photo-box hidden">
-        <img id="WhatsApp%20Image%202025-10-15%20at%2015.21.02.jpeg" alt="Foto ucapan" src="" />
-      </div>
-
-      <div id="messageBox" class="message-box hidden">
-        <div id="messageText" class="message-text"></div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <small>Semua dijalankan di device (tidak diupload ke server). Siap dipublish ke GitHub Pages.</small>
-    </footer>
-  </main>
+    <audio id="bgMusic" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6b8c4dc21a.mp3" loop></audio>
+  </div>
 
   <canvas id="confetti"></canvas>
 
-  <!-- musik opsional — ganti URL jika mau -->
-  <audio id="bgMusic" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6b8c4dc21a.mp3" loop></audio>
-
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
