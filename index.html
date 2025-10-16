@@ -1,29 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Selamat Datang di 17 Mu Sayangku Rizki!</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Selamat Datang Di 17 Mu Sayang — untuk rizki pacar aku</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1 id="title">🎂 Selamat Ulang Tahun, Sayangku 💖</h1>
+  <main class="app">
+    <header>
+      <h1>Selamat Datang Di 17 Mu Sayang</h1>
+      <p class="subtitle">Siapkan gambar & ucapan, lalu klik "Tampilkan Ucapan"</p>
+    </header>
 
-    <!-- 📸 Tempat menampilkan gambar -->
-    <div id="photo-container" class="photo hidden">
-      <img id="photo" src="WhatsApp%20Image%202025-10-15%20at%2015.21.02.jpeg" alt="Foto Ulang Tahun" />
-    </div>
+    <section class="controls">
+      <div class="left">
+        <label class="file-label">
+          Upload foto (dari perangkat)
+          <input id="fileInput" type="file" accept="image/*" />
+        </label>
 
-    <div id="message" class="message hidden"></div>
+        <label class="url-label">
+          / atau pakai URL gambar:
+          <input id="urlInput" type="url" placeholder="https://contoh.com/foto.jpg" />
+          <button id="useUrlBtn" type="button">Gunakan URL</button>
+        </label>
+      </div>
 
-    <button id="startBtn">Klik untuk Buka Ucapan 🎁</button>
+      <div class="right">
+        <textarea id="customMessage" aria-label="Ucapan">
+Selamat ulang tahun yang ke-17, sayang ❤️‍🔥
 
-    <audio id="bgMusic" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6b8c4dc21a.mp3" loop></audio>
-  </div>
+Tujuh belas tahun bukan sekadar angka, tapi awal dari perjalanan menuju kedewasaan. Aku bersyukur bisa menemani kamu tumbuh, melihat caramu berjuang, tertawa, dan belajar menghadapi dunia.
+
+Kamu bukan hanya seseorang yang aku sayangi, tapi juga tempat aku merasa tenang, tempat aku belajar apa itu ketulusan.
+Terima kasih sudah selalu jadi sosok yang sabar, hangat, dan penuh perhatian.
+
+Semoga di umur baru ini, semua impianmu semakin dekat. Langkahmu makin mantap, rezekimu lancar, dan hatimu selalu dikelilingi kebahagiaan. Jangan pernah lupa, di setiap doaku selalu ada namamu di dalamnya
+
+Aku bangga padamu, dan aku akan terus ada di sini. Menemanimu di setiap langkah, di setiap cerita, dan di setiap detak waktu yang kita jalani bersama 🤎
+        </textarea>
+
+        <div class="buttons">
+          <button id="startBtn">Tampilkan Ucapan 🎁</button>
+          <button id="resetBtn" class="muted">Reset</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="preview" class="preview hidden" aria-live="polite">
+      <div id="photoBox" class="photo-box hidden">
+        <img id="photo" alt="Foto ucapan" src="" />
+      </div>
+
+      <div id="messageBox" class="message-box hidden">
+        <div id="messageText" class="message-text"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small>Disimpan di device (tidak diupload ke server). Siap di-publish ke GitHub Pages.</small>
+    </footer>
+  </main>
 
   <canvas id="confetti"></canvas>
 
-  <script src="script.js"></script>
+  <!-- musik opsional — ganti URL jika mau -->
+  <audio id="bgMusic" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6b8c4dc21a.mp3" loop></audio>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
