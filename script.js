@@ -40,7 +40,6 @@ fileInput.addEventListener('change', e => {
 useUrlBtn.addEventListener('click', () => {
   const url = urlInput.value.trim();
   if (!url) { alert('Masukkan URL gambar terlebih dahulu.'); return; }
-  // basic validation
   try {
     new URL(url);
     currentImageSrc = url;
@@ -73,15 +72,15 @@ startBtn.addEventListener('click', () => {
   messageBox.classList.remove('hidden');
   messageText.textContent = text;
 
-  // if no image chosen, show a default gentle image (embedded link)
+  // if no image chosen, show a default gentle image
   if (!currentImageSrc) {
     currentImageSrc = 'https://i.ibb.co/5rv6s0P/love-cake.jpg'; // default
     photo.src = currentImageSrc;
     photoBox.classList.remove('hidden');
   }
 
-  // play music (may require user gesture which we have because of button click)
-  playMusicSafe();
+  // play music (user gesture)
+  try { music.play().catch(()=>{}); } catch(e){}
 
   // start confetti
   startConfetti();
@@ -104,15 +103,9 @@ resetBtn.addEventListener('click', () => {
   fileInput.value = '';
   // stop music
   music.pause(); music.currentTime = 0;
-  // stop confetti by reloading canvas (simple)
+  // stop confetti
   stopConfetti();
 });
-
-// --- music helper ---
-function playMusicSafe(){
-  // try-catch: some browsers block autoplay, but since this is inside a click handler should work
-  try { music.play().catch(()=>{}); } catch(e){}
-}
 
 // --- CONFETTI simple implementation ---
 let confettiParticles = [];
@@ -138,7 +131,6 @@ function drawConfetti(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
   confettiParticles.forEach(p=>{
     ctx.beginPath();
-    // draw as rounded rectangle/ellipse feel using arc for simplicity
     ctx.fillStyle = p.color;
     ctx.save();
     ctx.translate(p.x, p.y);
